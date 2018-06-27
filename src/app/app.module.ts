@@ -23,9 +23,7 @@ const APP_PROVIDERS = [];
   declarations: [ // 导入模块所依赖的组件、指令等,用于指定这个模块的视图类
     AppComponent
   ],
-  providers: [
-    ...APP_PROVIDERS
-  ],
+  providers: [],
   bootstrap: [
     AppComponent
   ]// 标记出引导组件

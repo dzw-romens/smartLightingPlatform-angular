@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>操作指南</title>
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <!-- build:css({.tmp,src}) styles/help.min.css -->
+    <link rel="stylesheet" href="app/assets/styles/help.css">
+    <!-- endbuild -->
+</head>
+<body>
+<div class="help-doc__wrapper">
+    <ul id="tabs">
+        <li class="list-item">
+            <a onclick="viewPDF('web')">WEB操作指南</a>
+        </li>
+        <li class="list-item">
+            <a onclick="viewPDF('app')">APP操作指南</a>
+        </li>
+    </ul>
+    <div id="pdfReader"></div>
+</div>
+<div class="global-footer">
+    中国移动@2016版权所有
+</div>
+<!-- build:js({.tmp,src}) js/pdfViewer.js -->
+<script src="app/assets/script/pdfobject.js"></script>
+<script src="app/assets/script/pdfCtrl.js"></script>
+<!-- endbuild -->
+</body>
+</html>

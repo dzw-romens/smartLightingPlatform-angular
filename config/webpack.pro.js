@@ -13,6 +13,6 @@ module.exports = webpackMerge(commonConfig, {
   },
   devServer: {
     port              : 8080,
-    historyApiFallback: true
+    historyApiFallback: true //使用HTML5历史记录API，使index.html代替404响应页面
   }
 });

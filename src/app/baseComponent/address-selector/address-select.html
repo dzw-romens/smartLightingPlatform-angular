@@ -1,0 +1,30 @@
+<div class="inline-block-filed">
+  <select
+    class="form-control"
+    name="province"
+    [(ngModel)]='province'
+    (change)="handleProvinceChange()">
+    <option value="">--选择省份--</option>
+    <option *ngFor="let ciprovincety of viewData.provinceList">{{province.regionName}}</option>
+  </select>
+
+  <select
+    class="form-control"
+    name="city"
+    *ngIf="province"
+    [(ngModel)]='city'
+    (change)="handleCityChange()">
+    <option value="">--选择城市--</option>
+    <option *ngFor="let city of viewData.cityList">{{city.regionName}}</option>
+  </select>
+
+  <select
+    class="form-control"
+    name="district"
+    [(ngModel)]='district'
+    *ngIf="viewData.districtList.length && city"
+    (change)="handleDistrictChange()">
+    <option value="">--选择县/区--</option>
+    <option *ngFor="let district of viewData.districtList">{{district.regionName}}</option>
+  </select>
+</div>
