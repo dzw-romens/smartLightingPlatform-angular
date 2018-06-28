@@ -1,13 +1,13 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { environment } from '../config/environments';
+// import { environment } from './environments';
 import { AppModule } from './app';
 
 //　生产环境下的加载方式
-if (environment.production) {
-  enableProdMode(); //暂时禁用
-  //todo:
-}
+// if (environment.production) {
+//   enableProdMode(); //暂时禁用
+//   //todo:
+// }
 
 
 platformBrowserDynamic().bootstrapModule(AppModule)

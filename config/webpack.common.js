@@ -8,9 +8,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    'polyfills': '../src/polyfills.ts', // 运行Angular时所需的一些标准js
-    'vendor': '../src/vendor.ts', // Angular、Lodash、bootstrap.css......
-    'app': '../src/main.ts' // 应用代码
+    'polyfills': './src/polyfills.ts', // 运行Angular时所需的一些标准js
+    'vendor': './src/vendor.ts', // Angular、Lodash、bootstrap.css......
+    'app': './src/main.ts' // 应用代码
   },
   resolve: { // 解析模块路径时的配置
     extensions: ['.ts', '.js'] // 制定模块的后缀，在引入模块时就会自动补全
@@ -23,13 +23,15 @@ module.exports = {
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
         //awesome-typescript-loader - 一个用于把TypeScript代码转译成ES5的加载器，它会由tsconfig.json文件提供指导
         //angular2-template-loader - 用于加载Angular组件的模板和样式
-      }, {
-        test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'jQuery'
-        }]
-      }, {
+      },
+      //  {
+      //   test: require.resolve('jquery'),
+      //   use: [{
+      //     loader: 'expose-loader',
+      //     options: 'jQuery'
+      //   }]
+      // },
+       {
         test: /\.json$/,
         use: 'json-loader'
       }, {
@@ -38,15 +40,16 @@ module.exports = {
       }, {
         test: /\.css$/,
         loaders: ['to-string-loader', 'css-loader']
-      }, {
+      },
+       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { sourceMap: true } },
-            { loader: 'less-loader', options: { sourceMap: true } }
-          ]})
-      }, {
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
+          'less-loader'
+        ]
+      }, 
+      {
         test: /\.html$/,
         use: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
