@@ -20,7 +20,7 @@ module.exports = {
     rules: [ // 告诉webpack每一类文件需要使用什么加载器来处理
       {
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-load-children-loader']
         //awesome-typescript-loader - 一个用于把TypeScript代码转译成ES5的加载器，它会由tsconfig.json文件提供指导
         //angular2-template-loader - 用于加载Angular组件的模板和样式
       },
@@ -44,11 +44,11 @@ module.exports = {
        {
         test: /\.less$/,
         use: [
-          'style-loader',
+          'to-string-loader',
           { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
           'less-loader'
         ]
-      }, 
+      },
       {
         test: /\.html$/,
         use: 'raw-loader',
@@ -75,7 +75,9 @@ module.exports = {
     }),
     // 提取 CSS 到单独的文件中
     new ExtractTextPlugin('app.bundle.css'),
-
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)@angular/
+    ),
     new HtmlWebpackPlugin({
       template: './src/index.html'
       // 自动向目标.html文件注入script和link标签

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'container',
-//   styleUrls: [
-//     './container.less'
-//   ],
-//   templateUrl: './container.html'
-// })
+@Component({
+  selector: 'dashboard',
+  styleUrls: [
+    './dashboard.less'
+  ],
+  templateUrl: './dashboard.component.html'
+})
 export class DashboradComponent {
 
 }

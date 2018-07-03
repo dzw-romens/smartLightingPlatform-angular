@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContainerComponent } from './container.component';
 
 import { DashboradComponent } from './dashboard/dashborad.component';
-import { DeviceParamComponent } from './device-param-management/deviceParam.component';
+import { DeviceParamComponent } from './device-param-management/device-param.component';
 import { OtaComponent } from './ota-management/ota.component';
 import { ProjectComponent } from './project-management/project.component';
 import { DeviceComponent } from './device-management/device.component';

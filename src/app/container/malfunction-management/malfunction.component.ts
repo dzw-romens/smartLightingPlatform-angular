@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'container',
-//   styleUrls: [
-//     './container.less'
-//   ],
-//   templateUrl: './container.html'
-// })
+@Component({
+  selector: 'malfunction',
+  styleUrls: [
+    './malfunction.less'
+  ],
+  templateUrl: './malfunction.component.html'
+})
 export class MalfunctionComponent {
 
 }

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'container',
-//   styleUrls: [
-//     './container.less'
-//   ],
-//   templateUrl: './container.html'
-// })
+@Component({
+  selector: 'device',
+  styleUrls: [
+    './device.less'
+  ],
+  templateUrl: './device.component.html'
+})
 export class DeviceComponent {
 
 }
