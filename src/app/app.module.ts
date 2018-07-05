@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // App is our top level component
+import { LoginComponent } from './container/login/login.component'
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
@@ -21,7 +22,8 @@ const APP_PROVIDERS = [];
     RouterModule.forRoot(routes,{useHash: false}),// RouterModule.forRoot()方法来创建根路由模块
   ],// 导入当前模块所需要的其他模块
   declarations: [ // 导入模块所依赖的组件、指令等,用于指定这个模块的视图类
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [

@@ -78,6 +78,11 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/
     ),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"development"'
+      }
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
       // 自动向目标.html文件注入script和link标签

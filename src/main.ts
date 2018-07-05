@@ -4,7 +4,7 @@ import { enableProdMode } from '@angular/core';
 import { AppModule } from './app';
 
 //　生产环境下的加载方式
-// if (environment.production) {
+// if (process.env.NODE_ENV === 'production') {
 //   enableProdMode(); //暂时禁用
 //   //todo:
 // }

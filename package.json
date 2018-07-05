@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "smart light system for wisdom city lights",
   "scripts": {
-    "proxyLocal": "NODE_ENV=development webpack-dev-server --inline --config config/webpack.dev.js --progress",
-    "proxy": "set NODE_ENV=development webpack-dev-server --inline --config config/webpack.dev.js --progress",
+    "proxyLocal": "webpack-dev-server --inline --config config/webpack.dev.js --progress",
+    "proxy": "webpack-dev-server --inline --config config/webpack.dev.js --progress",
     "test": "karma start",
-    "build-prod": "NODE_ENV=production webpack --config config/webpack.pro.js --progress --profile --bail",
+    "build-prod": "set NODE_ENV=production && webpack --config config/webpack.pro.js --progress --profile --bail",
     "webpack": "webpack",
     "rimraf": "rimraf"
   },
